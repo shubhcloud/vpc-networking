@@ -1,3 +1,3 @@
 output "az_count" {
-  value = aws_availability_zones.available.names
+  value = data.aws_availability_zones.available.names
 }
