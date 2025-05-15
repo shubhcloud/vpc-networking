@@ -4,6 +4,7 @@ variable "vpc_id" {default = ""}
 variable "namespace" {default = ""}
 variable "igw_id" {default = ""}
 variable "eip_id" {default = ""}
+variable "depends_on_public_subnet_id" {default = ""}
 
 variable "nat_gateway_id" {
     type = list(string) 
