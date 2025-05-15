@@ -3,7 +3,6 @@ locals {
 }
 
 resource "aws_subnet" "cbc-private-subnet" {
-  depends_on = [ var.depends_on_public_subnet_id ]
   vpc_id            = var.vpc_id
   count             = local.private_subnet_count
   cidr_block        = "10.0.${count.index+1}.0/24"
