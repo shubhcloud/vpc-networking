@@ -32,6 +32,7 @@ module "private-subnet" {
   vpc_id = module.vpc.vpc_id
   namespace = var.namespace
   az_count = module.availability-zones.az_count
+  depends_on_public_subnet_id = module.public-subnet.depends_on_public_subnet_id
 }
 
 module "internet-gateway" {
