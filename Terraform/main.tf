@@ -44,6 +44,7 @@ module "internet-gateway" {
 module "eip" {
   source = "./modules/elastic-ip"
   namespace = var.namespace
+  private_subnet_id = module.private-subnet.private_subnet_id
 }
 
 module "public-routing-table" {
@@ -68,6 +69,7 @@ module "nat-gateway" {
   private_subnet_id = module.private-subnet.private_subnet_id
   eip_id = module.eip.eip_id
   namespace = var.namespace
+  depends_on = [ module.eip ]
 }
 
 module "public-nacl" {

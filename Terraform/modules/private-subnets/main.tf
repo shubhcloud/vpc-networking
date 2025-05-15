@@ -5,7 +5,7 @@ locals {
 resource "aws_subnet" "cbc-private-subnet" {
   vpc_id            = var.vpc_id
   count             = local.private_subnet_count
-  cidr_block        = "10.0.${count.index+1}.0/24"
+  cidr_block        = "10.0.${count.index+4}.0/24"
   availability_zone = "${element(var.az_count, count.index)}"
 
   tags = {
