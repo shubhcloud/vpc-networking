@@ -1,0 +1,10 @@
+variable "region" {}
+variable "vpc_cidr" {}
+variable "vpc_id" {}
+variable "namespace" {}
+variable "az_count" {}
+variable "igw_id" {}
+variable "private_subnet_id" {}
+variable "public_subnet_id" {}
+variable "eip_id" {}
+variable "nat_gateway_id" {}
