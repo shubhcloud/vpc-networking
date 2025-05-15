@@ -13,5 +13,5 @@ resource "aws_route_table" "private-cbc-rt" {
 resource "aws_route_table_association" "private-rt-association" {
   count           = length(var.private_subnet_id)
   subnet_id       = var.private_subnet_id[count.index]
-  route_table_id  = aws_route_table.private-cbc-rt[0].id
+  route_table_id  = element(aws_route_table.private-cbc-rt.*.id, count.index) // 3 rt as we have 3 nat per subnet in different AZs.
 }
