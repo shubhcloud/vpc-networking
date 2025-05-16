@@ -66,7 +66,7 @@ module "private-routing-table" {
 module "nat-gateway" {
   source = "./modules/nat-gateway"
   igw_id = module.internet-gateway.igw_id
-  private_subnet_id = module.private-subnet.private_subnet_id
+  public_subnet_id = module.public-subnet.public_subnet_id
   eip_id = module.eip.eip_id
   namespace = var.namespace
   depends_on = [ module.eip ]
