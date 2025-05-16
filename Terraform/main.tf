@@ -78,3 +78,9 @@ module "public-nacl" {
   namespace = var.namespace
   public_subnet_id = module.public-subnet.public_subnet_id
 }
+
+module "security-froup" {
+  source = "./modules/security-groups"
+  vpc_id = module.vpc.vpc_id
+  namespace = var.namespace
+}
